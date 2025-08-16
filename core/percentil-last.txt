@@ -6,6 +6,7 @@ X	Percentil5	Percentil10	Percentil25	Percentil50	Percentil75	Percentil90	Percent
 3.000000000	48.77	9.32	13.45	15.23	13.92	8.00	3.98
 4.000000000	47.81	9.99	13.58	15.58	13.04	8.70	4.77
 5.000000000	43.07	12.55	14.78	15.79	13.75	8.08	5.81
+
 [type:f-h]
 X	Percentil5	Percentil10	Percentil25	Percentil50	Percentil75	Percentil90	Percentil95
 0.000000000	54.66	9.70	11.94	14.23	12.35	8.81	4.47
@@ -14,6 +15,7 @@ X	Percentil5	Percentil10	Percentil25	Percentil50	Percentil75	Percentil90	Percent
 3.000000000	48.77	9.32	13.45	15.23	13.92	8.00	3.98
 4.000000000	47.81	9.99	13.58	15.58	13.04	8.70	4.77
 5.000000000	43.07	12.55	14.78	15.79	13.75	8.08	5.81
+
 [type:m-d]
 X	Percentil5	Percentil10	Percentil25	Percentil50	Percentil75	Percentil90	Percentil95
 0.000000000	54.66	9.70	11.94	14.23	12.35	8.81	4.47
@@ -22,6 +24,7 @@ X	Percentil5	Percentil10	Percentil25	Percentil50	Percentil75	Percentil90	Percent
 3.000000000	48.77	9.32	13.45	15.23	13.92	8.00	3.98
 4.000000000	47.81	9.99	13.58	15.58	13.04	8.70	4.77
 5.000000000	43.07	12.55	14.78	15.79	13.75	8.08	5.81
+
 [type:f-d]
 X	Percentil5	Percentil10	Percentil25	Percentil50	Percentil75	Percentil90	Percentil95
 0.000000000	54.66	9.70	11.94	14.23	12.35	8.81	4.47
@@ -30,6 +33,7 @@ X	Percentil5	Percentil10	Percentil25	Percentil50	Percentil75	Percentil90	Percent
 3.000000000	48.77	9.32	13.45	15.23	13.92	8.00	3.98
 4.000000000	47.81	9.99	13.58	15.58	13.04	8.70	4.77
 5.000000000	43.07	12.55	14.78	15.79	13.75	8.08	5.81
+
 [type:m-hd]
 X	Percentil5	Percentil10	Percentil25	Percentil50	Percentil75	Percentil90	Percentil95
 0.000000000	54.66	9.70	11.94	14.23	12.35	8.81	4.47
@@ -38,6 +42,7 @@ X	Percentil5	Percentil10	Percentil25	Percentil50	Percentil75	Percentil90	Percent
 3.000000000	48.77	9.32	13.45	15.23	13.92	8.00	3.98
 4.000000000	47.81	9.99	13.58	15.58	13.04	8.70	4.77
 5.000000000	43.07	12.55	14.78	15.79	13.75	8.08	5.81
+
 [type:f-hd]
 X	Percentil5	Percentil10	Percentil25	Percentil50	Percentil75	Percentil90	Percentil95
 0.000000000	54.66	9.70	11.94	14.23	12.35	8.81	4.47
