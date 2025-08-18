@@ -1,0 +1,590 @@
+<div id="inputForm" style="margin: 20px auto; padding: 25px; max-width: 900px; background: white; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); font-family: Arial, sans-serif;">
+  <h1 style="color: #2c3e50; text-align: center; margin-bottom: 30px; border-bottom: 3px solid #3498db; padding-bottom: 15px;">CreatCloudBr - Ferramenta de Decisão em IRC</h1>
+  
+  <h3 style="color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; margin-top: 0;">Dados do Paciente</h3>
+  
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 20px;">
+    <div style="display: flex; flex-direction: column;">
+      <label for="birthDate" style="margin-bottom: 5px; font-weight: bold; color: #34495e;">Data de Nascimento:</label>
+      <input type="text" id="birthDate" placeholder="dd/mm/aaaa" 
+             style="padding: 10px; border: 1px solid #bdc3c7; border-radius: 8px; font-size: 14px;">
+    </div>
+    
+    <div style="display: flex; flex-direction: column;">
+      <label for="gender" style="margin-bottom: 5px; font-weight: bold; color: #34495e;">Sexo:</label>
+      <select id="gender" style="padding: 10px; border: 1px solid #bdc3c7; border-radius: 8px; font-size: 14px; background: white;">
+        <option value="m">Masculino</option>
+        <option value="f">Feminino</option>
+      </select>
+    </div>
+    
+    <div style="display: flex; flex-direction: column;">
+      <label for="morbidity" style="margin-bottom: 5px; font-weight: bold; color: #34495e;">Morbidade:</label>
+      <select id="morbidity" style="padding: 10px; border: 1px solid #bdc3c7; border-radius: 8px; font-size: 14px; background: white;">
+        <option value="HAS">HAS</option>
+        <option value="DM">DM</option>
+        <option value="HAS+DM">HAS+DM</option>
+      </select>
+    </div>
+  </div>
+
+  <h3 style="color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; margin-top: 30px;">Exames de Creatinina</h3>
+  
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+    <!-- Exame 1 -->
+    <div style="display: flex; flex-direction: column;">
+      <label for="examDate1" style="margin-bottom: 5px; font-weight: bold; color: #34495e;">Data do Exame 1:</label>
+      <input type="text" id="examDate1" placeholder="dd/mm/aaaa" 
+             style="padding: 10px; border: 1px solid #bdc3c7; border-radius: 8px; font-size: 14px;">
+    </div>
+    <div style="display: flex; flex-direction: column;">
+      <label for="creatinine1" style="margin-bottom: 5px; font-weight: bold; color: #34495e;">Creatinina (mg/dL):</label>
+      <input type="number" id="creatinine1" step="0.01" placeholder="0.00" 
+             style="padding: 10px; border: 1px solid #bdc3c7; border-radius: 8px; font-size: 14px;">
+    </div>
+    
+    <!-- Exame 2 -->
+    <div style="display: flex; flex-direction: column;">
+      <label for="examDate2" style="margin-bottom: 5px; font-weight: bold; color: #34495e;">Data do Exame 2:</label>
+      <input type="text" id="examDate2" placeholder="dd/mm/aaaa" 
+             style="padding: 10px; border: 1px solid #bdc3c7; border-radius: 8px; font-size: 14px;">
+    </div>
+    <div style="display: flex; flex-direction: column;">
+      <label for="creatinine2" style="margin-bottom: 5px; font-weight: bold; color: #34495e;">Creatinina (mg/dL):</label>
+      <input type="number" id="creatinine2" step="0.01" placeholder="0.00" 
+             style="padding: 10px; border: 1px solid #bdc3c7; border-radius: 8px; font-size: 14px;">
+    </div>
+    
+    <!-- Exame 3 -->
+    <div style="display: flex; flex-direction: column;">
+      <label for="examDate3" style="margin-bottom: 5px; font-weight: bold; color: #34495e;">Data do Exame 3:</label>
+      <input type="text" id="examDate3" placeholder="dd/mm/aaaa" 
+             style="padding: 10px; border: 1px solid #bdc3c7; border-radius: 8px; font-size: 14px;">
+    </div>
+    <div style="display: flex; flex-direction: column;">
+      <label for="creatinine3" style="margin-bottom: 5px; font-weight: bold; color: #34495e;">Creatinina (mg/dL):</label>
+      <input type="number" id="creatinine3" step="0.01" placeholder="0.00" 
+             style="padding: 10px; border: 1px solid #bdc3c7; border-radius: 8px; font-size: 14px;">
+    </div>
+    
+    <!-- Exame 4 -->
+    <div style="display: flex; flex-direction: column;">
+      <label for="examDate4" style="margin-bottom: 5px; font-weight: bold; color: #34495e;">Data do Exame 4:</label>
+      <input type="text" id="examDate4" placeholder="dd/mm/aaaa" 
+             style="padding: 10px; border: 1px solid #bdc3c7; border-radius: 8px; font-size: 14px;">
+    </div>
+    <div style="display: flex; flex-direction: column;">
+      <label for="creatinine4" style="margin-bottom: 5px; font-weight: bold; color: #34495e;">Creatinina (mg/dL):</label>
+      <input type="number" id="creatinine4" step="0.01" placeholder="0.00" 
+             style="padding: 10px; border: 1px solid #bdc3c7; border-radius: 8px; font-size: 14px;">
+    </div>
+    
+    <!-- Exame 5 -->
+    <div style="display: flex; flex-direction: column;">
+      <label for="examDate5" style="margin-bottom: 5px; font-weight: bold; color: #34495e;">Data do Exame 5:</label>
+      <input type="text" id="examDate5" placeholder="dd/mm/aaaa" 
+             style="padding: 10px; border: 1px solid #bdc3c7; border-radius: 8px; font-size: 14px;">
+    </div>
+    <div style="display: flex; flex-direction: column;">
+      <label for="creatinine5" style="margin-bottom: 5px; font-weight: bold; color: #34495e;">Creatinina (mg/dL):</label>
+      <input type="number" id="creatinine5" step="0.01" placeholder="0.00" 
+             style="padding: 10px; border: 1px solid #bdc3c7; border-radius: 8px; font-size: 14px;">
+    </div>
+  </div>
+
+  <div style="display: flex; justify-content: center; margin-top: 30px; gap: 20px; flex-wrap: wrap;">
+    <button id="generateChart" 
+            style="padding: 12px 30px; background-color: #3498db; color: white; border: none; border-radius: 25px; 
+                   font-size: 16px; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.2); transition: all 0.3s;"
+            onmouseover="this.style.backgroundColor='#2980b9'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.2)'"
+            onmouseout="this.style.backgroundColor='#3498db'; this.style.transform='none'; this.style.boxShadow='0 2px 5px rgba(0,0,0,0.2)'">
+      Gerar Gráfico
+    </button>
+    
+    <button id="generateChartT" 
+            style="padding: 12px 30px; background-color: #9b59b6; color: white; border: none; border-radius: 25px; 
+                   font-size: 16px; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.2); transition: all 0.3s;"
+            onmouseover="this.style.backgroundColor='#8e44ad'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.2)'"
+            onmouseout="this.style.backgroundColor='#9b59b6'; this.style.transform='none'; this.style.boxShadow='0 2px 5px rgba(0,0,0,0.2)'">
+      Gerar Gráfico (Ambos os Sexos)
+    </button>
+    
+    <button id="evaluationMode" 
+            style="padding: 12px 30px; background-color: #2ecc71; color: white; border: none; border-radius: 25px; 
+                   font-size: 16px; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.2); transition: all 0.3s;"
+            onmouseover="this.style.backgroundColor='#27ae60'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.2)'"
+            onmouseout="this.style.backgroundColor='#2ecc71'; this.style.transform='none'; this.style.boxShadow='0 2px 5px rgba(0,0,0,0.2)'">
+      Modo Avaliação
+    </button>
+  </div>
+</div>
+
+<div id="d3Chart" style="margin: 20px auto; padding: 25px; max-width: 900px; background: white; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"></div>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script>
+// Mock data files (replace with your actual data)
+const mockDataFiles = {
+  'm-h': `X\t5%\t10%\t25%\t50%\t75%\t90%\t95%
+0\t60.5\t65.2\t72.1\t80.3\t88.5\t95.2\t99.1
+1\t58.3\t63.1\t70.2\t78.5\t86.8\t93.6\t97.6
+2\t56.2\t61.0\t68.3\t76.7\t85.1\t92.0\t96.1
+3\t54.1\t59.0\t66.4\t74.9\t83.4\t90.4\t94.6
+4\t52.1\t57.0\t64.5\t73.1\t81.7\t88.8\t93.1
+5\t50.1\t55.1\t62.7\t71.3\t80.0\t87.2\t91.6`,
+  'f-h': `X\t5%\t10%\t25%\t50%\t75%\t90%\t95%
+0\t55.3\t59.8\t66.3\t74.1\t81.9\t88.4\t92.2
+1\t53.3\t57.8\t64.4\t72.3\t80.2\t86.8\t90.7
+2\t51.4\t55.9\t62.6\t70.6\t78.6\t85.3\t89.2
+3\t49.5\t54.1\t60.8\t68.9\t77.0\t83.8\t87.8
+4\t47.7\t52.3\t59.1\t67.2\t75.4\t82.3\t86.4
+5\t45.9\t50.5\t57.4\t65.6\t73.8\t80.8\t85.0`,
+  't-h': `X\t5%\t10%\t25%\t50%\t75%\t90%\t95%
+0\t57.9\t62.5\t69.2\t77.2\t85.2\t91.8\t95.6
+1\t55.8\t60.4\t67.3\t75.4\t83.5\t90.2\t94.1
+2\t53.8\t58.4\t65.4\t73.6\t81.8\t88.6\t92.6
+3\t51.8\t56.5\t63.6\t71.9\t80.2\t87.1\t91.2
+4\t49.9\t54.6\t61.8\t70.2\t78.6\t85.6\t89.8
+5\t48.0\t52.8\t60.0\t68.5\t77.0\t84.1\t88.4`,
+  'm-d': `X\t5%\t10%\t25%\t50%\t75%\t90%\t95%
+0\t58.2\t62.9\t69.7\t77.8\t85.9\t92.5\t96.4
+1\t56.1\t60.9\t67.8\t76.0\t84.2\t90.9\t94.9
+2\t54.0\t58.9\t65.9\t74.2\t82.5\t89.3\t93.4
+3\t52.0\t56.9\t64.0\t72.4\t80.8\t87.7\t91.9
+4\t50.0\t55.0\t62.2\t70.6\t79.1\t86.1\t90.4
+5\t48.1\t53.1\t60.4\t68.9\t77.4\t84.5\t88.9`,
+  'f-d': `X\t5%\t10%\t25%\t50%\t75%\t90%\t95%
+0\t53.1\t57.6\t64.1\t71.9\t79.7\t86.2\t90.0
+1\t51.2\t55.7\t62.3\t70.2\t78.1\t84.7\t88.6
+2\t49.3\t53.9\t60.6\t68.5\t76.5\t83.2\t87.2
+3\t47.5\t52.1\t58.9\t66.9\t75.0\t81.8\t85.8
+4\t45.7\t50.4\t57.2\t65.3\t73.5\t80.4\t84.5
+5\t44.0\t48.7\t55.6\t63.8\t72.0\t79.0\t83.2`,
+  't-d': `X\t5%\t10%\t25%\t50%\t75%\t90%\t95%
+0\t55.6\t60.2\t66.9\t74.8\t82.8\t89.3\t93.2
+1\t53.6\t58.3\t65.0\t73.1\t81.1\t87.8\t91.7
+2\t51.6\t56.4\t63.2\t71.3\t79.5\t86.3\t90.3
+3\t49.7\t54.5\t61.4\t69.6\t77.9\t84.8\t88.9
+4\t47.8\t52.7\t59.7\t68.0\t76.3\t83.3\t87.5
+5\t46.0\t50.9\t58.0\t66.4\t74.7\t81.8\t86.1`,
+  'm-hd': `X\t5%\t10%\t25%\t50%\t75%\t90%\t95%
+0\t56.9\t61.5\t68.2\t76.2\t84.2\t90.8\t94.6
+1\t54.8\t59.5\t66.3\t74.4\t82.5\t89.2\t93.2
+2\t52.8\t57.5\t64.4\t72.6\t80.8\t87.6\t91.7
+3\t50.8\t55.6\t62.6\t70.9\t79.2\t86.1\t90.2
+4\t48.9\t53.7\t60.8\t69.2\t77.6\t84.6\t88.8
+5\t47.0\t51.9\t59.1\t67.5\t76.0\t83.1\t87.4`,
+  'f-hd': `X\t5%\t10%\t25%\t50%\t75%\t90%\t95%
+0\t51.9\t56.4\t62.9\t70.7\t78.5\t85.0\t88.8
+1\t50.0\t54.5\t61.1\t69.0\t76.9\t83.5\t87.4
+2\t48.1\t52.7\t59.4\t67.3\t75.3\t82.0\t86.0
+3\t46.3\t50.9\t57.7\t65.7\t73.8\t80.6\t84.6
+4\t44.5\t49.2\t56.0\t64.1\t72.3\t79.2\t83.3
+5\t42.8\t47.5\t54.4\t62.6\t70.8\t77.8\t82.0`,
+  't-hd': `X\t5%\t10%\t25%\t50%\t75%\t90%\t95%
+0\t54.4\t59.0\t65.6\t73.5\t81.4\t87.9\t91.7
+1\t52.4\t57.0\t63.7\t71.7\t79.7\t86.3\t90.3
+2\t50.4\t55.1\t61.9\t69.9\t78.0\t84.8\t88.8
+3\t48.5\t53.2\t60.1\t68.2\t76.4\t83.3\t87.4
+4\t46.6\t51.4\t58.4\t66.6\t74.8\t81.8\t86.0
+5\t44.8\t49.6\t56.7\t65.0\t73.3\t80.4\t84.6`
+};
+
+// Função para carregar o arquivo de dados correto
+async function loadDataFile(gender, morbidity) {
+  const fileMap = {
+    'm': { 'HAS': 'm-h', 'DM': 'm-d', 'HAS+DM': 'm-hd' },
+    'f': { 'HAS': 'f-h', 'DM': 'f-d', 'HAS+DM': 'f-hd' },
+    't': { 'HAS': 't-h', 'DM': 't-d', 'HAS+DM': 't-hd' }
+  };
+  
+  const fileKey = fileMap[gender][morbidity];
+  return mockDataFiles[fileKey];
+}
+
+// Function to calculate creatinine clearance (REVERTIDA para versão original)
+function calculateClearance(gender, creatinine, ageInYears) {
+  if (gender === 'm') {
+    if (creatinine < 0.9) {
+      return 142 * Math.pow((creatinine / 0.9), -0.329) * Math.pow(0.9938, ageInYears) * 1;
+    } else {
+      return 142 * Math.pow((creatinine / 0.9), -1.209) * Math.pow(0.9938, ageInYears) * 1;
+    }
+  } else { // female
+    if (creatinine < 0.7) {
+      return 142 * Math.pow((creatinine / 0.7), -0.411) * Math.pow(0.9938, ageInYears) * 1.012;
+    } else {
+      return 142 * Math.pow((creatinine / 0.7), -1.209) * Math.pow(0.9938, ageInYears) * 1.012;
+    }
+  }
+}
+
+// Function to parse date in dd/mm/yyyy format
+function parseDate(dateStr) {
+  if (!dateStr) return null;
+  const parts = dateStr.split('/');
+  if (parts.length !== 3) return null;
+  return new Date(parts[2], parts[1] - 1, parts[0]);
+}
+
+// Function to calculate years between two dates
+function calculateYears(date1, date2) {
+  if (!date1 || !date2) return 0;
+  return (date2 - date1) / (1000 * 60 * 60 * 24 * 365);
+}
+
+// Main function to generate chart for selected gender
+async function generateChart() {
+  const gender = document.getElementById('gender').value;
+  await generateChartWithGender(gender, false);
+}
+
+// Main function to generate chart with all genders data (t) but using selected gender for clearance
+async function generateChartT() {
+  const selectedGender = document.getElementById('gender').value; // Pega o gender do dropdown
+  await generateChartWithGender('t', false, selectedGender); // Passa 't' para os dados e selectedGender para o cálculo
+}
+
+// Evaluation mode function
+async function evaluationMode() {
+  const selectedGender = document.getElementById('gender').value;
+  await generateChartWithGender(selectedGender, true);
+}
+
+// Common function to generate chart
+async function generateChartWithGender(dataGender, evaluationMode = false, clearanceGender = dataGender) {
+  // Get form values
+  const morbidity = document.getElementById('morbidity').value;
+  const birthDate = parseDate(document.getElementById('birthDate').value);
+  
+  // Validate birth date
+  if (!birthDate || isNaN(birthDate.getTime())) {
+    alert("Por favor, insira uma data de nascimento válida no formato dd/mm/aaaa");
+    return;
+  }
+  
+  // Get exam data
+  const examData = [];
+  for (let i = 1; i <= 5; i++) {
+    const examDate = parseDate(document.getElementById(`examDate${i}`).value);
+    const creatinine = parseFloat(document.getElementById(`creatinine${i}`).value);
+    
+    if (examDate && !isNaN(creatinine)) {
+      examData.push({
+        examDate,
+        creatinine,
+        ageInYears: calculateYears(birthDate, examDate)
+      });
+    }
+  }
+
+  // Validate at least one exam
+  if (examData.length === 0) {
+    alert("Por favor, insira pelo menos um exame com data e creatinina válidos");
+    return;
+  }
+
+  // Calculate clearance values - usando o clearanceGender (pode ser diferente do dataGender)
+  const patientPoints = [];
+  if (examData.length > 0) {
+    const firstExamDate = examData[0].examDate;
+    examData.forEach((exam, index) => {
+      const clearance = calculateClearance(clearanceGender, exam.creatinine, exam.ageInYears);
+      const xValue = index === 0 ? 0 : calculateYears(firstExamDate, exam.examDate);
+      patientPoints.push({ x: xValue, y: clearance });
+    });
+  }
+
+  // Load the percentile data - usando o dataGender
+  const rawData = await loadDataFile(dataGender, morbidity);
+  if (!rawData) {
+    alert('Dados não encontrados para esta combinação');
+    return;
+  }
+
+  // Verify exam dates are in chronological order
+  for (let i = 1; i < examData.length; i++) {
+    if (examData[i].examDate < examData[i-1].examDate) {
+      alert("As datas dos exames não estão em ordem cronológica. Por favor, corrija os dados.");
+      return;
+    }
+  }
+
+  // Parse the percentile data
+  const data = d3.tsvParse(rawData, d3.autoType);
+  const stackKeys = Object.keys(data[0]).filter(d => d !== "X");
+
+  // Chart configuration
+  const width = 800, height = 500;
+  const margin = {top: 40, right: 150, bottom: 80, left: 60};
+  
+  // Clear previous chart
+  d3.select("#d3Chart").selectAll("*").remove();
+  
+  // Create SVG container
+  const svg = d3.select("#d3Chart")
+    .append("svg")
+    .attr("width", width)
+    .attr("height", height)
+    .attr("viewBox", [0, 0, width, height])
+    .attr("style", "max-width: 100%; height: auto;");
+
+  // Prepare data for stacking
+  const series = d3.stack()
+    .keys(stackKeys)
+    .order(d3.stackOrderNone)
+    .offset(d3.stackOffsetNone)(data);
+
+  // Scales
+  const x = d3.scaleBand()
+    .domain(data.map(d => d.X))
+    .range([margin.left, width - margin.right])
+    .padding(0.2);
+
+  const y = d3.scaleLinear()
+    .domain([0, 140]) // Increased domain to accommodate line points
+    .nice()
+    .range([height - margin.bottom, margin.top]);
+
+  // Color scale for the stacks
+  const color = d3.scaleOrdinal()
+    .domain(stackKeys)
+    .range(["#ffffff", "#cc0000", "#ff8800", "#ffdd00", "#ffff00", "#00ff00", "#00cc00"]);
+
+  // Create bars
+  svg.selectAll("g.layer")
+    .data(series)
+    .enter()
+    .append("g")
+    .attr("class", "layer")
+    .attr("fill", d => color(d.key))
+    .selectAll("rect")
+    .data(d => d)
+    .enter()
+    .append("rect")
+    .attr("x", d => x(d.data.X))
+    .attr("y", height - margin.bottom)
+    .attr("width", x.bandwidth())
+    .attr("height", 0)
+    .transition()
+    .delay((d, i) => i * 1)
+    .duration(800)
+    .attr("y", d => y(d[1]))
+    .attr("height", d => y(d[0]) - y(d[1]));
+
+  // Axes
+  svg.append("g")
+    .attr("transform", `translate(0,${height - margin.bottom})`)
+    .call(d3.axisBottom(x)
+      .tickValues([0, 1, 2, 3, 4, 5])
+      .tickFormat(d3.format("0"))
+    )
+    .selectAll("text")
+      .attr("transform", "rotate(0)")
+      .style("text-anchor", "end")
+      .attr("dx", "-0.5em")
+      .attr("dy", "0.5em");
+  
+  // X axis label
+  svg.append("text")
+    .attr("transform", `translate(${width / 2},${height - margin.bottom / 3})`)
+    .style("text-anchor", "middle")
+    .text("Anos a partir do primeiro exame");
+
+  // Y axis
+  svg.append("g")
+    .attr("transform", `translate(${margin.left},0)`)
+    .call(d3.axisLeft(y));
+
+  // Y axis label
+  svg.append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("y", margin.left / 3)
+    .attr("x", -height / 2)
+    .style("text-anchor", "middle")
+    .text("Clearence calculado");
+  
+  // Legend
+  const legend = svg.append("g")
+    .attr("transform", `translate(${width - margin.right + 30}, ${margin.top})`);
+  
+  series.slice().reverse().forEach((d, i) => {
+    legend.append("rect")
+      .attr("x", 0)
+      .attr("y", i * 20)
+      .attr("width", 15)
+      .attr("height", 15)
+      .attr("fill", color(d.key));
+    
+    legend.append("text")
+      .attr("x", 20)
+      .attr("y", i * 20 + 12)
+      .text(d.key)
+      .style("font-size", "12px");
+  });
+
+  // Title
+  const genderText = dataGender === 'm' ? 'Masculino' : (dataGender === 'f' ? 'Feminino' : 'de Ambos os sexos');
+  const morbText = {
+    'HAS': 'com Hipertensão',
+    'DM': 'com Diabetes',
+    'HAS+DM': 'com Hipertensão e Diabetes'
+  }[morbidity];
+  
+  svg.append("text")
+    .attr("x", width / 2)
+    .attr("y", margin.top - 20)
+    .attr("text-anchor", "middle")
+    .style("font-size", "18px")
+    .style("font-weight", "bold")
+    .text(`Percentil segundo o estudo para Paciente ${genderText} ${morbText}`);
+
+  // Create a scale for the line x-axis (continuous) matching the bar chart's 0-5 range
+  const xLine = d3.scaleLinear()
+    .domain([0, 5]) // Fixed domain from 0 to 5 years
+    .range([margin.left + x.bandwidth()/2, width - margin.right - x.bandwidth()/2]);
+  
+  // Filter points to only those within the 0-5 year range
+  const validPoints = patientPoints.filter(d => d.x >= 0 && d.x <= 5);
+  
+  if (validPoints.length > 0) {
+    // Line generator for patient data
+    const line = d3.line()
+      .x(d => xLine(d.x))
+      .y(d => y(d.y));
+    
+    // Add the patient line
+    svg.append("path")
+      .datum(validPoints)
+      .attr("fill", "none")
+      .attr("stroke", "black")
+      .attr("stroke-width", 2)
+      .attr("d", line);
+    
+    // Add diamond markers for patient data
+    svg.selectAll(".patient-point")
+      .data(validPoints)
+      .enter()
+      .append("path")
+      .attr("class", "patient-point")
+      .attr("d", d3.symbol().type(d3.symbolDiamond).size(100))
+      .attr("transform", d => `translate(${xLine(d.x)},${y(d.y)})`)
+      .attr("fill", "black")
+      .attr("stroke", "black");
+    
+    // Add labels for the patient points
+    svg.selectAll(".patient-label")
+      .data(validPoints)
+      .enter()
+      .append("text")
+      .attr("class", "patient-label")
+      .attr("x", d => xLine(d.x))
+      .attr("y", d => y(d.y) - 10)
+      .attr("text-anchor", "middle")
+      .style("font-size", "12px")
+      .style("font-weight", "bold")
+      .text(d => d.y.toFixed(1));
+
+    // Evaluation mode specific elements
+    if (evaluationMode && validPoints.length > 1) {
+      const slope = -1.53; // Slope for evaluation lines
+      const evaluationLines = [];
+      const evaluationPoints = [];
+      const comparisonBoxes = [];
+
+      // Create evaluation lines and points
+      for (let i = 1; i < validPoints.length; i++) {
+        const prevPoint = validPoints[i-1];
+        const currentPoint = validPoints[i];
+        
+        // Create evaluation line from previous point with slope -1.53
+        evaluationLines.push({
+          startX: prevPoint.x,
+          startY: prevPoint.y,
+          endX: currentPoint.x,
+          endY: prevPoint.y + slope * (currentPoint.x - prevPoint.x)
+        });
+        
+        // Create evaluation point at current x position
+        evaluationPoints.push({
+          x: currentPoint.x,
+          y: prevPoint.y + slope * (currentPoint.x - prevPoint.x)
+        });
+        
+        // Create comparison box data
+        comparisonBoxes.push({
+          x: currentPoint.x,
+          actualY: currentPoint.y,
+          expectedY: prevPoint.y + slope * (currentPoint.x - prevPoint.x),
+          difference: currentPoint.y - (prevPoint.y + slope * (currentPoint.x - prevPoint.x))
+        });
+      }
+
+      // Draw evaluation lines (gray dashed)
+      evaluationLines.forEach(line => {
+        svg.append("line")
+          .attr("x1", xLine(line.startX))
+          .attr("y1", y(line.startY))
+          .attr("x2", xLine(line.endX))
+          .attr("y2", y(line.endY))
+          .attr("stroke", "#999")
+          .attr("stroke-width", 1)
+          .attr("stroke-dasharray", "5,5");
+      });
+
+      // Draw evaluation points (gray diamonds)
+      evaluationPoints.forEach(point => {
+        svg.append("path")
+          .attr("class", "evaluation-point")
+          .attr("d", d3.symbol().type(d3.symbolDiamond).size(100))
+          .attr("transform", `translate(${xLine(point.x)},${y(point.y)})`)
+          .attr("fill", "#999")
+          .attr("stroke", "#999");
+        
+        // Add labels for evaluation points
+        svg.append("text")
+          .attr("class", "evaluation-label")
+          .attr("x", xLine(point.x))
+          .attr("y", y(point.y) - 10)
+          .attr("text-anchor", "middle")
+          .style("font-size", "12px")
+          .style("font-weight", "bold")
+          .style("fill", "#666")
+          .text(point.y.toFixed(1));
+      });
+
+      // Draw comparison boxes
+      comparisonBoxes.forEach((box, i) => {
+        const boxWidth = x.bandwidth() * 0.8;
+        const boxHeight = Math.abs(y(box.actualY) - Math.abs(y(box.expectedY));
+        const boxY = box.actualY > box.expectedY ? y(box.actualY) : y(box.expectedY);
+        
+        svg.append("rect")
+          .attr("x", xLine(box.x) - boxWidth/2)
+          .attr("y", boxY)
+          .attr("width", boxWidth)
+          .attr("height", Math.abs(boxHeight))
+          .attr("fill", box.difference > 0 ? "rgba(0,255,0,0.2)" : "rgba(255,0,0,0.2)")
+          .attr("stroke", box.difference > 0 ? "#0a0" : "#a00")
+          .attr("stroke-width", 1);
+        
+        // Add difference text
+        svg.append("text")
+          .attr("x", xLine(box.x))
+          .attr("y", boxY + Math.abs(boxHeight)/2)
+          .attr("text-anchor", "middle")
+          .attr("dominant-baseline", "middle")
+          .style("font-size", "10px")
+          .style("font-weight", "bold")
+          .style("fill", box.difference > 0 ? "#0a0" : "#a00")
+          .text(`${box.difference.toFixed(1)} mL/min`);
+      });
+    }
+  }
+}
+
+// Event listeners
+document.getElementById('generateChart').addEventListener('click', generateChart);
+document.getElementById('generateChartT').addEventListener('click', generateChartT);
+document.getElementById('evaluationMode').addEventListener('click', evaluationMode);
+</script>

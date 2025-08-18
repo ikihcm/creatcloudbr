@@ -1,0 +1,92 @@
+<div id="inputForm" style="margin: 20px auto; padding: 25px; max-width: 900px; background: white; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); font-family: Arial, sans-serif;">
+  <h3 style="color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; margin-top: 0;">Dados do Paciente</h3>
+  
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 20px;">
+    <div style="display: flex; flex-direction: column;">
+      <label for="birthDate" style="margin-bottom: 5px; font-weight: bold; color: #34495e;">Data de Nascimento:</label>
+      <input type="text" id="birthDate" placeholder="dd/mm/aaaa" 
+             style="padding: 10px; border: 1px solid #bdc3c7; border-radius: 8px; font-size: 14px;">
+    </div>
+    
+    <div style="display: flex; flex-direction: column;">
+      <label for="gender" style="margin-bottom: 5px; font-weight: bold; color: #34495e;">Sexo:</label>
+      <select id="gender" style="padding: 10px; border: 1px solid #bdc3c7; border-radius: 8px; font-size: 14px; background: white;">
+        <option value="m">Masculino</option>
+        <option value="f">Feminino</option>
+      </select>
+    </div>
+    
+    <div style="display: flex; flex-direction: column;">
+      <label for="morbidity" style="margin-bottom: 5px; font-weight: bold; color: #34495e;">Morbidade:</label>
+      <select id="morbidity" style="padding: 10px; border: 1px solid #bdc3c7; border-radius: 8px; font-size: 14px; background: white;">
+        <option value="HAS">HAS</option>
+        <option value="DM">DM</option>
+        <option value="HAS+DM">HAS+DM</option>
+      </select>
+    </div>
+  </div>
+
+  <h3 style="color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; margin-top: 30px;">Exames de Creatinina</h3>
+  
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+    <!-- Exame 1 -->
+    <div style="display: flex; flex-direction: column;">
+      <label for="examDate1" style="margin-bottom: 5px; font-weight: bold; color: #34495e;">Data do Exame 1:</label>
+      <input type="text" id="examDate1" placeholder="dd/mm/aaaa" 
+             style="padding: 10px; border: 1px solid #bdc3c7; border-radius: 8px; font-size: 14px;">
+    </div>
+    <div style="display: flex; flex-direction: column;">
+      <label for="creatinine1" style="margin-bottom: 5px; font-weight: bold; color: #34495e;">Creatinina (mg/dL):</label>
+      <input type="number" id="creatinine1" step="0.01" placeholder="0.00" 
+             style="padding: 10px; border: 1px solid #bdc3c7; border-radius: 8px; font-size: 14px;">
+    </div>
+    
+    <!-- Exame 2 -->
+    <div style="display: flex; flex-direction: column;">
+      <label for="examDate2" style="margin-bottom: 5px; font-weight: bold; color: #34495e;">Data do Exame 2:</label>
+      <input type="text" id="examDate2" placeholder="dd/mm/aaaa" 
+             style="padding: 10px; border: 1px solid #bdc3c7; border-radius: 8px; font-size: 14px;">
+    </div>
+    <div style="display: flex; flex-direction: column;">
+      <label for="creatinine2" style="margin-bottom: 5px; font-weight: bold; color: #34495e;">Creatinina (mg/dL):</label>
+      <input type="number" id="creatinine2" step="0.01" placeholder="0.00" 
+             style="padding: 10px; border: 1px solid #bdc3c7; border-radius: 8px; font-size: 14px;">
+    </div>
+    
+    <!-- Exame 3 -->
+    <div style="display: flex; flex-direction: column;">
+      <label for="examDate3" style="margin-bottom: 5px; font-weight: bold; color: #34495e;">Data do Exame 3:</label>
+      <input type="text" id="examDate3" placeholder="dd/mm/aaaa" 
+             style="padding: 10px; border: 1px solid #bdc3c7; border-radius: 8px; font-size: 14px;">
+    </div>
+    <div style="display: flex; flex-direction: column;">
+      <label for="creatinine3" style="margin-bottom: 5px; font-weight: bold; color: #34495e;">Creatinina (mg/dL):</label>
+      <input type="number" id="creatinine3" step="0.01" placeholder="0.00" 
+             style="padding: 10px; border: 1px solid #bdc3c7; border-radius: 8px; font-size: 14px;">
+    </div>
+    
+    <!-- Exame 4 -->
+    <div style="display: flex; flex-direction: column;">
+      <label for="examDate4" style="margin-bottom: 5px; font-weight: bold; color: #34495e;">Data do Exame 4:</label>
+      <input type="text" id="examDate4" placeholder="dd/mm/aaaa" 
+             style="padding: 10px; border: 1px solid #bdc3c7; border-radius: 8px; font-size: 14px;">
+    </div>
+    <div style="display: flex; flex-direction: column;">
+      <label for="creatinine4" style="margin-bottom: 5px; font-weight: bold; color: #34495e;">Creatinina (mg/dL):</label>
+      <input type="number" id="creatinine4" step="0.01" placeholder="0.00" 
+             style="padding: 10px; border: 1px solid #bdc3c7; border-radius: 8px; font-size: 14px;">
+    </div>
+  </div>
+
+  <div style="display: flex; justify-content: center; margin-top: 30px;">
+    <button id="generateChart" 
+            style="padding: 12px 30px; background-color: #3498db; color: white; border: none; border-radius: 25px; 
+                   font-size: 16px; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.2); transition: all 0.3s;"
+            onmouseover="this.style.backgroundColor='#2980b9'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.2)'"
+            onmouseout="this.style.backgroundColor='#3498db'; this.style.transform='none'; this.style.boxShadow='0 2px 5px rgba(0,0,0,0.2)'">
+      Gerar Gráfico
+    </button>
+  </div>
+</div>
+
+<div id="d3Chart" style="margin: 20px auto; max-width: 900px;"></div>

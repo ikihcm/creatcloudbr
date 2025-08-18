@@ -1,0 +1,148 @@
+<div id="d3Chart"></div>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script>
+// Carrega os dados do arquivo TXT
+d3.text("percentil.txt").then(rawData => {
+  // Converte os dados tabulados para formato JSON
+  const data = d3.tsvParse(rawData.replace(/ /g, ""), d3.autoType);
+  
+  // Extrai as chaves para o gráfico empilhado (todas as colunas exceto X)
+  const chavesEmpilhamento = Object.keys(data[0]).filter(d => d !== "X");
+
+  // Dimensões do gráfico e margens
+  const largura = 800, altura = 500;
+  const margem = {topo: 40, direita: 150, base: 80, esquerda: 60};
+    
+  // Cria o container SVG
+  const svg = d3.select("#d3Chart")
+    .append("svg")
+    .attr("width", largura)
+    .attr("height", altura)
+    .attr("viewBox", [0, 0, largura, altura])
+    .attr("style", "max-width: 100%; height: auto;");
+
+  // Prepara os dados para empilhamento
+  const series = d3.stack()
+    .keys(chavesEmpilhamento)
+    .order(d3.stackOrderNone)
+    .offset(d3.stackOffsetNone)(data);
+
+  // Escala X (converte valores X para posições)
+  const x = d3.scaleBand()
+    .domain(data.map(d => d.X))
+    .range([margem.esquerda, largura - margem.direita])
+    .padding(0.2);
+
+  // Escala Y (converte valores para posições)
+  const y = d3.scaleLinear()
+    .domain([0, d3.max(series, camada => d3.max(camada, d => d[1])) * 1]) // Adiciona 5% de espaço
+    .nice()
+    .range([altura - margem.base, margem.topo]);
+
+  // Cores personalizadas para cada percentil
+  const coresPersonalizadas = [
+    "#2ca02c",  // P_5Y - verde
+    "#98df8a",  // P_10Y - verde claro
+    "#d62728",  // P_25Y - vermelho
+    "#ff9896",  // P_50Y - vermelho claro
+    "#1f77b4",  // P_75Y - azul
+    "#aec7e8",  // P_90Y - azul claro
+    "#9467bd"   // P_95Y - roxo
+  ];
+
+  // Escala de cores para as séries
+  const cor = d3.scaleOrdinal()
+    .domain(chavesEmpilhamento)
+    .range(coresPersonalizadas);
+
+  // Cria as barras empilhadas
+  svg.selectAll("g.camada")
+    .data(series)
+    .enter()
+    .append("g")
+    .attr("class", "camada")
+    .attr("fill", d => cor(d.key))
+    .selectAll("rect")
+    .data(d => d)
+    .enter()
+    .append("rect")
+    .attr("x", d => x(d.data.X))
+    .attr("y", altura - margem.base)
+    .attr("width", x.bandwidth())
+    .attr("height", 0)
+    .transition()
+    .delay((d, i) => i * 1)
+    .duration(800)
+    .attr("y", d => y(d[1]))
+    .attr("height", d => y(d[0]) - y(d[1]));
+
+  // Adiciona eixo X
+  svg.append("g")
+    .attr("transform", `translate(0,${altura - margem.base})`)
+    .call(d3.axisBottom(x).tickFormat(d3.format(".3f")))
+    .selectAll("text")
+      .attr("transform", "rotate(-45)")
+      .style("text-anchor", "end")
+      .attr("dx", "-0.5em")
+      .attr("dy", "0.5em");
+
+  // Adiciona rótulo do eixo X
+  svg.append("text")
+    .attr("transform", `translate(${largura / 2},${altura - margem.base / 3})`)
+    .style("text-anchor", "middle")
+    .text("Valores de X");
+
+  // Adiciona eixo Y
+  svg.append("g")
+    .attr("transform", `translate(${margem.esquerda},0)`)
+    .call(d3.axisLeft(y));
+
+  // Adiciona rótulo do eixo Y
+  svg.append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("y", margem.esquerda / 3)
+    .attr("x", -altura / 2)
+    .style("text-anchor", "middle")
+    .text("Percentual (%)");
+
+  // Adiciona legenda (INVERTIDA)
+  const legenda = svg.append("g")
+    .attr("transform", `translate(${largura - margem.direita + 30}, ${margem.topo})`);
+    
+  // Inverte a ordem das séries para a legenda
+  const seriesInvertidas = [...series].reverse();
+  
+  legenda.selectAll("rect")
+    .data(seriesInvertidas)
+    .enter()
+    .append("rect")
+    .attr("x", 0)
+    .attr("y", (d, i) => i * 20)
+    .attr("width", 15)
+    .attr("height", 15)
+    .attr("fill", d => cor(d.key));
+    
+  legenda.selectAll("text")
+    .data(seriesInvertidas)
+    .enter()
+    .append("text")
+    .attr("x", 20)
+    .attr("y", (d, i) => i * 20 + 12)
+    .text(d => d.key)
+    .style("font-size", "12px")
+    .attr("alignment-baseline", "middle");
+
+  // Adiciona título do gráfico
+  svg.append("text")
+    .attr("x", largura / 2)
+    .attr("y", margem.topo - 10)
+    .attr("text-anchor", "middle")
+    .style("font-size", "16px")
+    .style("font-weight", "bold")
+    .text("Distribuição por Percentis (P5 a P95)");
+}).catch(error => {
+  console.error("Erro ao carregar os dados:", error);
+  d3.select("#d3Chart").append("p").text("Erro ao carregar o arquivo de dados.");
+});
+</script>
